@@ -29,13 +29,7 @@ collections:
 
     documents:
       admin_user:
-        fields:
-          email:
-            stringValue: admin@example.com
-          role:
-            stringValue: admin
-          active:
-            booleanValue: true
+        json_file: documents/admin_user.json
 
   orders:
     indexes:

@@ -1,0 +1,6 @@
+{
+  "fields": {
+    "name": { "stringValue": "Jane Doe" },
+    "region": { "stringValue": "asia-pacific" }
+  }
+}

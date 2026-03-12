@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "name": { "stringValue": "Widget Pro" },
+    "category": { "stringValue": "electronics" },
+    "price": { "doubleValue": 29.99 }
+  }
+}

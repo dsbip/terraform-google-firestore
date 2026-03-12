@@ -22,14 +22,17 @@ locals {
     ]
   ])
 
-  # Flatten documents from collections
+  # Resolve the base directory of the config file for relative JSON paths
+  config_dir = dirname(var.config_file)
+
+  # Flatten documents from collections — each document points to a JSON file
   documents = flatten([
     for col_name, col in try(local.config.collections, {}) : [
       for doc_name, doc in try(col.documents, {}) : {
         key        = "${col_name}-${doc_name}"
         collection = col_name
         document   = doc_name
-        fields     = doc.fields
+        fields     = file("${local.config_dir}/${doc.json_file}")
       }
     ]
   ])

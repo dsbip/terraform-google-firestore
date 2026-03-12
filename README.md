@@ -43,9 +43,7 @@ collections:
 
     documents:
       admin_user:
-        fields:
-          email:
-            stringValue: admin@example.com
+        json_file: documents/admin_user.json  # path relative to config.yaml
 
 backup_schedules:
   daily_backup:

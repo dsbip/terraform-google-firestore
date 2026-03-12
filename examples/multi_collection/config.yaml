@@ -25,13 +25,7 @@ collections:
 
     documents:
       sample_product:
-        fields:
-          name:
-            stringValue: "Widget Pro"
-          category:
-            stringValue: "electronics"
-          price:
-            doubleValue: 29.99
+        json_file: documents/sample_product.json
 
   customers:
     indexes:
@@ -45,11 +39,7 @@ collections:
 
     documents:
       sample_customer:
-        fields:
-          name:
-            stringValue: "Jane Doe"
-          region:
-            stringValue: "asia-pacific"
+        json_file: documents/sample_customer.json
 
   reviews:
     indexes:

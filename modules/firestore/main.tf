@@ -54,7 +54,7 @@ resource "google_firestore_document" "this" {
   database    = google_firestore_database.this.name
   collection  = each.value.collection
   document_id = each.value.document
-  fields      = jsonencode(each.value.fields)
+  fields      = each.value.fields
 }
 
 # -------------------------------------------------------------------

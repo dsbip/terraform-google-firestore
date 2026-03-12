@@ -1,0 +1,7 @@
+{
+  "fields": {
+    "email": { "stringValue": "admin@example.com" },
+    "role": { "stringValue": "admin" },
+    "active": { "booleanValue": true }
+  }
+}
