@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "userId": { "stringValue": "user_admin" },
+    "orderDate": { "stringValue": "2026-03-01T10:00:00Z" },
+    "status": { "stringValue": "completed" },
+    "total": { "doubleValue": 149.99 },
+    "items": { "integerValue": "3" }
+  }
+}

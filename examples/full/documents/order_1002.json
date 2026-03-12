@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "userId": { "stringValue": "user_editor" },
+    "orderDate": { "stringValue": "2026-03-10T14:30:00Z" },
+    "status": { "stringValue": "pending" },
+    "total": { "doubleValue": 59.50 },
+    "items": { "integerValue": "1" }
+  }
+}

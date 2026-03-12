@@ -30,6 +30,10 @@ collections:
     documents:
       admin_user:
         json_file: documents/admin_user.json
+      editor_user:
+        json_file: documents/editor_user.json
+      viewer_user:
+        json_file: documents/viewer_user.json
 
   orders:
     indexes:
@@ -47,6 +51,12 @@ collections:
             order: ASCENDING
           - field_path: total
             order: DESCENDING
+
+    documents:
+      order_1001:
+        json_file: documents/order_1001.json
+      order_1002:
+        json_file: documents/order_1002.json
 
 backup_schedules:
   daily_backup:

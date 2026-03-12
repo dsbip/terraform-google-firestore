@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "email": { "stringValue": "viewer@example.com" },
+    "role": { "stringValue": "viewer" },
+    "active": { "booleanValue": false },
+    "department": { "stringValue": "support" }
+  }
+}

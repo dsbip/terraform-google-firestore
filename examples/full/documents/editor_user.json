@@ -1,0 +1,8 @@
+{
+  "fields": {
+    "email": { "stringValue": "editor@example.com" },
+    "role": { "stringValue": "editor" },
+    "active": { "booleanValue": true },
+    "department": { "stringValue": "content" }
+  }
+}
