@@ -1,0 +1,3 @@
+# Scenario 1: Minimal — just a Firestore database with defaults
+project_id: my-gcp-project
+location: us-east1

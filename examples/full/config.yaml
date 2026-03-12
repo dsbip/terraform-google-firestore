@@ -1,0 +1,64 @@
+# Scenario 2: Full-featured — database + indexes + documents + backups
+project_id: my-gcp-project
+location: us-central1
+database_type: FIRESTORE_NATIVE
+database_id: "(default)"
+delete_protection_state: DELETE_PROTECTION_ENABLED
+point_in_time_recovery: POINT_IN_TIME_RECOVERY_ENABLED
+concurrency_mode: OPTIMISTIC
+
+collections:
+  users:
+    indexes:
+      by_email_created:
+        query_scope: COLLECTION
+        fields:
+          - field_path: email
+            order: ASCENDING
+          - field_path: createdAt
+            order: DESCENDING
+      by_role_status:
+        query_scope: COLLECTION
+        fields:
+          - field_path: role
+            order: ASCENDING
+          - field_path: active
+            order: ASCENDING
+          - field_path: lastLogin
+            order: DESCENDING
+
+    documents:
+      admin_user:
+        fields:
+          email:
+            stringValue: admin@example.com
+          role:
+            stringValue: admin
+          active:
+            booleanValue: true
+
+  orders:
+    indexes:
+      by_user_date:
+        query_scope: COLLECTION
+        fields:
+          - field_path: userId
+            order: ASCENDING
+          - field_path: orderDate
+            order: DESCENDING
+      by_status_total:
+        query_scope: COLLECTION
+        fields:
+          - field_path: status
+            order: ASCENDING
+          - field_path: total
+            order: DESCENDING
+
+backup_schedules:
+  daily_backup:
+    recurrence: daily
+    retention: 604800s    # 7 days
+  weekly_backup:
+    recurrence: weekly
+    retention: 2592000s   # 30 days
+    day: SUNDAY

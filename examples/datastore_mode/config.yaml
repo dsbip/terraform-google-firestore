@@ -1,0 +1,17 @@
+# Scenario 3: Datastore-mode database with collection group index
+project_id: my-gcp-project
+location: europe-west1
+database_type: DATASTORE_MODE
+database_id: datastore-db
+concurrency_mode: PESSIMISTIC
+
+collections:
+  tasks:
+    indexes:
+      by_priority_across_groups:
+        query_scope: COLLECTION_GROUP
+        fields:
+          - field_path: priority
+            order: DESCENDING
+          - field_path: dueDate
+            order: ASCENDING

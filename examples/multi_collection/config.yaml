@@ -1,0 +1,69 @@
+# Scenario 4: Multiple collections with array-contains indexes and seed data
+project_id: my-gcp-project
+location: asia-south1
+database_type: FIRESTORE_NATIVE
+database_id: ecommerce-db
+delete_protection_state: DELETE_PROTECTION_ENABLED
+
+collections:
+  products:
+    indexes:
+      by_category_price:
+        query_scope: COLLECTION
+        fields:
+          - field_path: category
+            order: ASCENDING
+          - field_path: price
+            order: ASCENDING
+      by_tags:
+        query_scope: COLLECTION
+        fields:
+          - field_path: tags
+            array_config: CONTAINS
+          - field_path: price
+            order: DESCENDING
+
+    documents:
+      sample_product:
+        fields:
+          name:
+            stringValue: "Widget Pro"
+          category:
+            stringValue: "electronics"
+          price:
+            doubleValue: 29.99
+
+  customers:
+    indexes:
+      by_region_name:
+        query_scope: COLLECTION
+        fields:
+          - field_path: region
+            order: ASCENDING
+          - field_path: name
+            order: ASCENDING
+
+    documents:
+      sample_customer:
+        fields:
+          name:
+            stringValue: "Jane Doe"
+          region:
+            stringValue: "asia-pacific"
+
+  reviews:
+    indexes:
+      by_product_rating:
+        query_scope: COLLECTION
+        fields:
+          - field_path: productId
+            order: ASCENDING
+          - field_path: rating
+            order: DESCENDING
+          - field_path: createdAt
+            order: DESCENDING
+
+backup_schedules:
+  daily:
+    recurrence: daily
+    retention: 259200s  # 3 days
